@@ -37,7 +37,7 @@
         "description": "url for authentication",
         "key": "authApiURL",
         "value": "",
-        "type": "input"
+        "type": "text"
       },
       {
         "label": "Auth Client Id",
@@ -58,7 +58,7 @@
         "description": "url for forms",
         "key": "formsApiURL",
         "value": "",
-        "type": "input"
+        "type": "text"
       },
       {
         "label": "forms API key",
@@ -72,7 +72,7 @@
         "description": "tenant id for forms",
         "key": "formsTenantId",
         "value": "",
-        "type": "input"
+        "type": "text"
       }
     ]
   },
