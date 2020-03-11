@@ -33,14 +33,46 @@
     },
     "variables": [
       {
-        "authApiUrl": "",
-        "authClientId": "",
-        "authClientSecret": ""
+        "label": "Auth API url",
+        "description": "url for authentication",
+        "key": "authApiURL",
+        "value": "",
+        "type": "string"
       },
       {
-        "formsApiUrl": "",
-        "formsApiKey": "",
-        "formsTenantId": ""
+        "label": "Auth Client Id",
+        "description": "Client id for authentication",
+        "key": "authClientId",
+        "value": "",
+        "type": "password"
+      },
+      {
+        "label": "Auth Client Secret",
+        "description": "Client secret for authentication",
+        "key": "authClientSecret",
+        "value": "",
+        "type": "password"
+      },
+      {
+        "label": "Forms API url",
+        "description": "url for forms",
+        "key": "formsApiURL",
+        "value": "",
+        "type": "string"
+      },
+      {
+        "label": "forms API key",
+        "description": "apiKey for forms",
+        "key": "formsApiKey",
+        "value": "",
+        "type": "password"
+      },
+      {
+        "label": "forms tenant id",
+        "description": "tenant id for forms",
+        "key": "formsTenantId",
+        "value": "",
+        "type": "string"
       }
     ]
   },

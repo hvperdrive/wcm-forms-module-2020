@@ -1,5 +1,5 @@
 const request = require('request-promise');
-var VariableHelper = require('@wcm/module-helper').variables;
+var VariableHelper = require('../helpers/variables');
 
 var authApiUrl;
 var authClientId;
@@ -7,22 +7,6 @@ var authClientSecret;
 var formsApiUrl;
 var formsApiKey;
 var formsTenantId;
-
-VariableHelper.getAll(packageInfo.name, packageInfo.version)
-    .then(
-        function onSuccess(variables) {
-            // access variables here
-            // The variables object is modified so it only contains key/value pairs.
-
-            // Example output:
-            // {
-            //   [key as specified in the package.json] : [value]
-            // }
-        },
-        function onError(responseError) {
-            // handle error here
-        }
-    );
 
 function getAuth() { // tslint:disable-next-line: no-any
     return request.post({
@@ -37,6 +21,7 @@ function getAuth() { // tslint:disable-next-line: no-any
 }
 
 function getAll(qs = {}) {
+    console.log(VariableHelper.get());
     const auth = new Promise(function(resolve) {
         const data = this.getAuth()
             .then(function(data) {

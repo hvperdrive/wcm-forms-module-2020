@@ -1,33 +1,13 @@
 'use strict';
 
 // Set default envs
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-process.env.APP = process.env.APP || 'default';
-
-require('rootpath')();
 var Q = require('q');
 var _ = require('lodash');
 var mongoose = require('mongoose');
 var packageConfig = require('../../package.json');
-// var config = require('config')();
-
-// Get mongo url parameter
-var argvIndex = _.findIndex(process.argv, function (val) {
-	return val.indexOf('mongodb://') !== -1;
-});
-
-if (argvIndex < 0 || argvIndex >= process.argv.length) {
-	console.log('No mongo path specified. Please use --mongo [mongoPath]');
-	return process.exit(1);
-}
-
-var mongoUrl = process.argv[argvIndex];
 
 // Start mongoose connection
-mongoose.connect(mongoUrl);
-mongoose.Promise = require('q').Promise;
-
-var FieldTypeModel = require('app/models/fieldType');
+var FieldTypeModel = require('@wcm/module-helper').models.FieldType;
 
 // jscs:disable maximumLineLength
 var fieldTypes = {
@@ -91,8 +71,7 @@ var checkIfFieldTypeAlreadyExists = function checkIfFieldTypeAlreadyExists(field
 
 	return d.promise;
 };
-
-export module {
+module.exports = function() {
 	var promises = [];
 
 	_.forEach(fieldTypes, function (ft) {
@@ -112,12 +91,10 @@ export module {
 	Q.all(promises).then(
 		function onSuccess() {
 			console.log('Form fieldtypes added');
-			process.exit(0);
 		},
 		function onError(err) {
 			console.log('There was a error while adding a fieldtype for a form');
 			console.log(err);
-			process.exit(1);
 		}
 	);
 };
