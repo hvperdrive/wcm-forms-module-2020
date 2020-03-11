@@ -9,7 +9,7 @@
 
 			function feFactory($resource, configuration) {
 
-				var api = configuration.serverPath + configuration.apiPrefix + configuration.apiLevel;
+				var api = configuration.serverPath + configuration.apiPrefix + configuration.apiLevel + "forms";
 				var factory = {};
 
 				factory = $resource(api);

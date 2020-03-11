@@ -9,7 +9,7 @@ angular.module("wcm-forms-sna_1.0.0.directives")
 		function(formsSNAConfig, formsSNAFactory) {
 			return {
 				restrict: "E",
-				templateUrl: formsSNAFactory.modulePath + "directives/fields/form-field/form-field.html",
+				templateUrl: formsSNAConfig.modulePath + "directives/fields/form-field/form-field.html",
 				replace: true,
 				scope: {
 					label: "@",
