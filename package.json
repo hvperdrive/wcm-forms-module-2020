@@ -31,7 +31,18 @@
                 "requiresLogin": true
             }
         },
-        "variables": []
+        "variables": [
+          {
+            "authApiUrl": "",
+            "authClientId": "",
+            "authClientSecret": ""
+          },
+          {
+            "formsApiUrl": "",
+            "formsApiKey": "",
+            "formsTenantId": ""
+          }
+        ]
     },
     "author": "Jeroen Valcke",
     "license": "ISC",
