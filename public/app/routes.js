@@ -5,22 +5,22 @@
 		.config([
 
 			"$stateProvider",
-			"boilerplateConfigProvider",
+			"formsSNAConfigProvider",
 
-			function ($stateProvider, boilerplateConfigProvider) {
+			function ($stateProvider, formsSNAConfigProvider) {
 
-				var moduleFolder = boilerplateConfigProvider.API.modulePath;
+				var moduleFolder = formsSNAConfigProvider.API.modulePath;
 
 				$stateProvider
 
-					.state("pelorus.wcm-boilerplate.index", {
+					.state("pelorus.wcm-forms-sna.index", {
 						url: "",
 						access: {
 							requiresLogin: true
 						},
 						resolve: {
-							ListData: ["boilerplateFactory", function(boilerplateFactory) {
-								return boilerplateFactory.get({ id: "public" }).$promise;
+							ListData: ["formsSNAFactory", function(formsSNAFactory) {
+								return formsSNAFactory.get().$promise;
 							}],
 						},
 						ncyBreadcrumb: {
@@ -29,20 +29,20 @@
 						views: {
 							"": {
 								templateUrl: moduleFolder + "views/overview.html",
-								controller: "boilerplateOverviewController"
+								controller: "forms-snaOverviewController"
 							}
 						}
 					})
 
-					.state("pelorus.wcm-boilerplate.edit", {
+					.state("pelorus.wcm-forms-sna.edit", {
 						url: "/{uuid}",
 						access: {
 							requiresLogin: true
 						},
 						resolve: {
-							InstanceData: ["boilerplateFactory", "$stateParams", function(boilerplateFactory, $stateParams) {
+							InstanceData: ["formsSNAFactory", "$stateParams", function(formsSNAFactory, $stateParams) {
 								if ($stateParams.uuid && $stateParams.uuid !== "new") {
-									return boilerplateFactory.get({ id: $stateParams.uuid }).$promise;
+									return formsSNAFactory.get({ id: $stateParams.uuid }).$promise;
 								} else {
 									return {};
 								}
@@ -56,7 +56,7 @@
 								templateUrl: "/app/core/resource/views/resource.html",
 								controller: "boilerplateDetailController"
 							},
-							"form@pelorus.wcm-boilerplate.edit": {
+							"form@pelorus.wcm-forms-sna.edit": {
 								templateUrl: moduleFolder + "views/detail.html"
 							}
 						}

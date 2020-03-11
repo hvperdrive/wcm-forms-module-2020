@@ -1,23 +1,23 @@
 "use strict";
 
 (function(angular) {
-	angular.module("wcm-boilerplate_0.0.1.factories", []);
-	angular.module("wcm-boilerplate_0.0.1.services", ["wcm-boilerplate_0.0.1.factories"]);
-	angular.module("wcm-boilerplate_0.0.1.controllers", ["wcm-boilerplate_0.0.1.services"]);
-	angular.module("wcm-boilerplate_0.0.1.directives", ["wcm-boilerplate_0.0.1.controllers"]);
+	angular.module("wcm-forms-sna_1.0.0.factories", []);
+	angular.module("wcm-forms-sna_1.0.0.services", ["wcm-forms-sna_1.0.0.factories"]);
+	angular.module("wcm-forms-sna_1.0.0.controllers", ["wcm-forms-sna_1.0.0.services"]);
+	angular.module("wcm-forms-sna_1.0.0.directives", ["wcm-forms-sna_1.0.0.controllers"]);
 
-	angular.module("wcm-boilerplate_0.0.1", [
+	angular.module("wcm-forms-sna_1.0.0", [
 
 		"pelorus.services",
 
-		"wcm-boilerplate_0.0.1.factories",
-		"wcm-boilerplate_0.0.1.services",
-		"wcm-boilerplate_0.0.1.controllers",
-		"wcm-boilerplate_0.0.1.directives"
+		"wcm-forms-sna_1.0.0.factories",
+		"wcm-forms-sna_1.0.0.services",
+		"wcm-forms-sna_1.0.0.controllers",
+		"wcm-forms-sna_1.0.0.directives"
 
 	])
 	.run([function () {
-		console.log("Boilerplate module is loaded and available!"); // eslint-disable-line no-console
+		console.log("WCM forms sna module is loaded and available!"); // eslint-disable-line no-console
 	}]);
 })(window.angular);
 

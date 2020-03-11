@@ -1,4 +1,5 @@
-const boilerplateController = require("../controllers/boilerplate");
+import { FormsController } from '../controllers/forms';
+import { copy } from '../middleware/copy';
 
 // Get the configuration of the WCM
 const config = require("@wcm/module-helper").getConfig();
@@ -13,12 +14,11 @@ const MethodSecurity = require("@wcm/module-helper").methodSecurity;
 const PermissionsSecurity = require("@wcm/module-helper").permissionsSecurity("boilerplate");
 
 // Building the baseUrl based on the configuration. Every API call needs to be located after the api/ route
-const baseUrl = "/" + config.api.prefix + config.api.version + "boilerplate";
+const baseUrl = "/" + config.api.prefix + config.api.version + "forms";
+
 
 module.exports = (app) => {
+	const formsFontroller = new FormsController();
 
-	app.route(baseUrl + "/public").get(boilerplateController.test("public"));
-
-	app.route(baseUrl + "/protected").get(ProfileSecurity, MethodSecurity.read, PermissionsSecurity, boilerplateController.test("protected"));
-
+	app.route(baseUrl + "").get(copy ,formsFontroller.getAll);
 }
