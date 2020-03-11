@@ -15,7 +15,7 @@ var fieldTypes = {
 		key: 'form-select',
 		label: 'Form',
 		type: 'form-select',
-		dataType: 'array',
+		dataType: 'object',
 		isQueryable: false,
 		isTranslate: false,
 		isMultiple: true,

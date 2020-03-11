@@ -40,6 +40,7 @@ angular.module("wcm-forms-sna_1.0.0.directives")
 					var init = function init() {
 						formsSNAFactory.query().$promise
 							.then(function(forms) {
+								console.log(forms);
 								$scope.settings.options = forms;
 							});
 					};

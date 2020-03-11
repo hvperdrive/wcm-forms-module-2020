@@ -1,6 +1,6 @@
 {
-  "name": "@wcm/boilerplate",
-  "version": "0.0.1",
+  "name": "@wcm/forms-sna",
+  "version": "1.0.0",
   "description": "Boilerplate module",
   "main": "app",
   "scripts": {
@@ -10,7 +10,7 @@
     "@wcm:registry": "https://nexusrepo.antwerpen.be/repository/npm-private"
   },
   "keywords": [
-    "Boilerplate",
+    "SnaForms",
     "WCM",
     "Pelorus",
     "module",
@@ -20,13 +20,10 @@
     "angularDirPath": "public/app/",
     "cssDirPath": "public/styles/",
     "moduleConfig": {
-      "angularModule": "wcm-boilerplate",
-      "translationKey": "Boilerplate",
-      "operationType": "boilerplate",
-      "icon": "ban",
-      "type": "system",
-      "machineName": "boilerplate",
-      "navigationItem": true,
+      "angularModule": "wcm-forms-sna",
+      "operationType": "sna-forms",
+      "machineName": "sna-forms",
+      "navigationItem": false,
       "authentication": {
         "requiresLogin": true
       }
