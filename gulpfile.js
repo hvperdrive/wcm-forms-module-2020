@@ -25,8 +25,8 @@ gulp.task("swagger", function() {
 gulp.task("templateCache", function() {
     return gulp.src("./public/app/**/*.template.html")
         .pipe(angularTemplatecache({
-            module: packageConfig.name + "_" + packageConfig.version,
-            root: "app/modules/" + packageConfig.name + "_" + packageConfig.version + "/public/app/"
+            module: packageConfig.wcmModule.moduleConfig.angularModule + "_" + packageConfig.version,
+            root: "niv_modules/" + packageConfig.wcmModule.moduleConfig.angularModule + "_" + packageConfig.version + "/public/app/"
         }))
         .pipe(gulp.dest("./public/app/template-cache"));
 });
