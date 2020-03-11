@@ -1,5 +1,5 @@
-import { FormsController } from '../controllers/forms';
-import { copy } from '../middleware/copy';
+const formController = require('../controllers/forms');
+const copy = require('../middleware/copy');
 
 // Get the configuration of the WCM
 const config = require("@wcm/module-helper").getConfig();
@@ -18,7 +18,5 @@ const baseUrl = "/" + config.api.prefix + config.api.version + "forms";
 
 
 module.exports = (app) => {
-	const formsFontroller = new FormsController();
-
 	app.route(baseUrl + "").get(copy ,formsFontroller.getAll);
 }

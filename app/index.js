@@ -1,8 +1,10 @@
 const setupRoutes = require("./routes");
 const variablesHelper = require("./helpers/variables");
 const hooksController = require("./controllers/hooks");
+const fieldFixture = require("./fixtures/fieldTypes");
 
 module.exports = (app, hooks, moduleInfo) => {
+	fieldFixture();
 	// Get variables
 	variablesHelper.reload(moduleInfo)
 		.then((variables) => {

@@ -1,4 +1,4 @@
-export const copy = (req, res, next) => {
+module.exports = function(req, res, next) {
 	req.data = {
 		body: clone(req.body),
 		headers: clone(req.headers),
