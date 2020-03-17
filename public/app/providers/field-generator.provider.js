@@ -10,7 +10,7 @@ angular.module("wcm-forms-sna_1.0.0")
 			var customFields = [
 				{
 					key: "form-select",
-					url: "app/modules/@wcm/forms-sna_1.0.0/public/app/directives/fields/form-field/form-field.template.html",
+					url: "niv_modules/wcm-forms-sna_1.0.0/public/app/directives/fields/form-field/form-field.template.html",
 				},
 			];
 

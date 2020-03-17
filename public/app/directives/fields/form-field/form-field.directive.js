@@ -15,7 +15,8 @@ angular.module("wcm-forms-sna_1.0.0.directives")
 					label: "@",
 					secondaryLabel: "@?",
 					name: "@",
-					model: "=",
+                    model: "=",
+                    readonly: "=?",
 
 					// Validation
 					fieldData: "=",
@@ -29,19 +30,46 @@ angular.module("wcm-forms-sna_1.0.0.directives")
 					disabled: "=?",
 				},
 				link: function($scope, element, attr) {
-					$scope.settings = {
-						qlabel: "meta.label",
-						track: null,
+                    $scope.form = {
+                        settings: {},
+                    }
+
+                    $scope.version = {
+                        settings: {},
+                    }
+
+                    $scope.form.settings = {
+						qlabel: "identifier",
+						track: "identifier",
 						options: [],
-						id: "uuid",
 						placeholder: "Select a form",
-					};
+                    };
+
+                    $scope.version.settings = {
+                        qlabel: "version",
+						track: "id",
+						options: [],
+						placeholder: "Select a version",
+                    }
+
+                    $scope.$watch('model.form', function(nv, prev) {
+                        formsSNAFactory.history.query({id: nv.identifier}).$promise
+							.then(function(versions) {
+                                $scope.version.settings.options = versions
+							});
+                    })
+
+                    $scope.$watch('model.version', function(nv, prev) {
+                        formsSNAFactory.template.get({id: nv.id}).$promise
+							.then(function(template) {
+                                $scope.model.template = template;
+							});
+                    })
 
 					var init = function init() {
-						formsSNAFactory.query().$promise
+						formsSNAFactory.all.query().$promise
 							.then(function(forms) {
-								console.log(forms);
-								$scope.settings.options = forms;
+                                $scope.form.settings.options = forms;
 							});
 					};
 

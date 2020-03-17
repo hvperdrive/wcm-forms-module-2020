@@ -12,7 +12,11 @@
 				var api = configuration.serverPath + configuration.apiPrefix + configuration.apiLevel + "forms";
 				var factory = {};
 
-				factory = $resource(api);
+				factory = {
+                    all: $resource(api),
+                    history: $resource(api + "/history/:id", { id: '@id' }),
+                    template: $resource(api + "/template/:id", { id: '@id' })
+                };
 
 				return factory;
 			},

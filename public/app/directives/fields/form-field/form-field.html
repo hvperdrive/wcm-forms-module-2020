@@ -1,16 +1,28 @@
 <div>
     <selectbox-field
-        label="{{label}}"
+        label="Form"
         secondary-label="{{secondaryLabel}}"
         name="{{name}}"
-        model="model"
+        model="model.form"
         required="required"
         field-data="fieldData"
-        qlabel="{{settings.qlabel}}"
-        id="{{settings.id}}"
-        track="{{settings.track}}"
-        placeholder="placeholder || settings.placeholder"
-        options="settings.options"
-        disabled="disabled">
+        qlabel="{{form.settings.qlabel}}"
+        track="{{form.settings.track}}"
+        placeholder="placeholder || form.settings.placeholder"
+        options="form.settings.options"
+        disabled="disabled || readonly">
+    </selectbox-field>
+    <selectbox-field
+        label="Version"
+        secondary-label="{{secondaryLabel}}"
+        name="{{name}}"
+        model="model.version"
+        required="required"
+        field-data="fieldData"
+        qlabel="{{version.settings.qlabel}}"
+        track="{{version.settings.track}}"
+        placeholder="placeholder || version.settings.placeholder"
+        options="version.settings.options"
+        disabled="disabled || readonly">
     </selectbox-field>
 </div>

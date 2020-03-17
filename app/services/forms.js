@@ -1,19 +1,12 @@
 const request = require('request-promise');
 var VariableHelper = require('../helpers/variables');
 
-var authApiUrl;
-var authClientId;
-var authClientSecret;
-var formsApiUrl;
-var formsApiKey;
-var formsTenantId;
-
 function getAuth() { // tslint:disable-next-line: no-any
     return request.post({
-        url: `${config.forms.apiUrl}/oauth2/token`,
+        url: `${VariableHelper.get().authApiURL}/oauth2/token`,
         body: {
-            'client_id': config.forms.clientId, // tslint:disable-line: object-literal-key-quotes
-            'client_secret': config.forms.clientSecret, // tslint:disable-line: object-literal-key-quotes
+            'client_id': VariableHelper.get().authClientId, // tslint:disable-line: object-literal-key-quotes
+            'client_secret': VariableHelper.get().authClientSecret, // tslint:disable-line: object-literal-key-quotes
             'grant_type': 'client_credentials', // tslint:disable-line: object-literal-key-quotes
         },
         json: true,
@@ -21,26 +14,55 @@ function getAuth() { // tslint:disable-next-line: no-any
 }
 
 function getAll(qs = {}) {
-    console.log(VariableHelper.get());
-    const auth = new Promise(function(resolve) {
-        const data = this.getAuth()
-            .then(function(data) {
-                resolve(data);
+    return getAuth()
+        .then((auth) => {
+            return request.get({
+                qs,
+                url: `${VariableHelper.get().formsApiURL}/forms/search`,
+                json: true,
+                headers: {
+                    Authorization: `bearer ${auth.access_token}`,
+                    apikey: VariableHelper.get().formsApiKey,
+                    'dgp-tenant-id': VariableHelper.get().formsTenantId,
+                },
             });
-    })
+        })
+}
 
-    return request.get({
-        qs,
-        url: `${config.forms.apiUrl}/forms/search`,
-        json: true,
-        headers: {
-            Authorization: `bearer ${auth.access_token}`,
-            apikey: config.server.apiKey,
-            'dgp-tenant-id': config.forms.dgpTenantId,
-        },
-    });
+function getHistory(id, qs = {}) {
+	return getAuth()
+		.then((auth) => {
+			return request.get({
+				qs,
+				url: `${VariableHelper.get().formsApiURL}/forms/${id}/history`,
+				json: true,
+				headers: {
+					Authorization: `bearer ${auth.access_token}`,
+                    apikey: VariableHelper.get().formsApiKey,
+                    'dgp-tenant-id': VariableHelper.get().formsTenantId,
+				},
+			});
+		})
+}
+
+function getTemplate(id, qs = {}) {
+	return getAuth()
+		.then((auth) => {
+			return request.get({
+				qs,
+				url: `${VariableHelper.get().formsApiURL}/forms/${id}`,
+				json: true,
+				headers: {
+					Authorization: `bearer ${auth.access_token}`,
+                    apikey: VariableHelper.get().formsApiKey,
+                    'dgp-tenant-id': VariableHelper.get().formsTenantId,
+				},
+			});
+		})
 }
 
 module.exports = {
-    getAll,
+	getAll,
+    getHistory,
+    getTemplate,
 }

@@ -19,4 +19,6 @@ const baseUrl = "/" + config.api.prefix + config.api.version + "forms";
 
 module.exports = (app) => {
 	app.route(baseUrl).get(copy ,formController.getAll);
+    app.route(baseUrl + "/history/:id").get(copy ,formController.getHistory);
+    app.route(baseUrl + "/template/:id").get(copy ,formController.getTemplate);
 }
