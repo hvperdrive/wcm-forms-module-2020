@@ -10,8 +10,8 @@ function getAll(req, res, next) {
                 online: true,
             }
         ).then(function(forms) {
-            const test = forms._embedded.resourceList;
-			res.status(200).json(test);
+            const forms = forms._embedded.resourceList.map((form) => form.id);
+			res.status(200).json(forms);
 		});
     } catch (error) {
         next(error);
