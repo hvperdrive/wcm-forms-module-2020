@@ -53,7 +53,7 @@ angular.module("wcm-forms-sna_1.0.0.directives")
                     }
 
                     $scope.$watch('model.form', function(nv, prev) {
-                        formsSNAFactory.history.query({id: nv.identifier}).$promise
+                        formsSNAFactory.history.query({id: nv}).$promise
 							.then(function(versions) {
                                 $scope.version.settings.options = versions
 							});

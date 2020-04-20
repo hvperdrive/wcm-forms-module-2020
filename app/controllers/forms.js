@@ -12,7 +12,11 @@ function getAll(req, res, next) {
         ).then(function(forms) {
 			const mappedForms = forms._embedded.resourceList.map((form) => ({
                 id: form.id,
-				identifier: form.identifier,
+                identifier: form.identifier,
+                uuid: form.identifier,
+                meta: {
+                    label: form.identifier,
+                }
             }));
 			res.status(200).json(mappedForms);
 		});

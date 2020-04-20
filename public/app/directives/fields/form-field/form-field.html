@@ -1,17 +1,18 @@
 <div>
-    <selectbox-field
+    <field
         label="Form"
-        secondary-label="{{secondaryLabel}}"
         name="{{name}}"
         model="model.form"
+        type="'uiselect'"
         required="required"
         field-data="fieldData"
         qlabel="{{form.settings.qlabel}}"
         track="{{form.settings.track}}"
         placeholder="placeholder || form.settings.placeholder"
         options="form.settings.options"
-        disabled="disabled || readonly">
-    </selectbox-field>
+        multiple="false"
+        readonly="disabled || readonly">
+    </field>
     <selectbox-field
         label="Version"
         secondary-label="{{secondaryLabel}}"
