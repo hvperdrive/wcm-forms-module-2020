@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("wcm-forms-sna_1.0.0")
+angular.module("wcm-forms-sna_1.1.2")
 	.provider("fieldGenerator", [
 
 		"$provide",
