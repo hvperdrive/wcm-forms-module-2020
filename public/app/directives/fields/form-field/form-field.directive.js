@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("wcm-forms-sna_1.1.3.directives")
+angular.module("wcm-forms-sna_1.1.4.directives")
 	.directive("formField", [
 
 		"formsSNAConfig",
