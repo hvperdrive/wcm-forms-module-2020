@@ -1,6 +1,6 @@
 {
   "name": "@wcm/forms-sna",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Boilerplate module",
   "main": "app",
   "scripts": {
