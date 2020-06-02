@@ -1,7 +1,7 @@
 
 "use strict";
 
-angular.module("wcm-forms-sna_1.1.7")
+angular.module("wcm-forms-sna_1.1.8")
 	.config([
 
 		"fieldGeneratorProvider",

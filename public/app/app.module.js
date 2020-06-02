@@ -1,19 +1,19 @@
 "use strict";
 
 (function(angular) {
-	angular.module("wcm-forms-sna_1.1.7.factories", []);
-	angular.module("wcm-forms-sna_1.1.7.services", ["wcm-forms-sna_1.1.7.factories"]);
-	angular.module("wcm-forms-sna_1.1.7.controllers", ["wcm-forms-sna_1.1.7.services"]);
-	angular.module("wcm-forms-sna_1.1.7.directives", ["wcm-forms-sna_1.1.7.controllers"]);
+	angular.module("wcm-forms-sna_1.1.8.factories", []);
+	angular.module("wcm-forms-sna_1.1.8.services", ["wcm-forms-sna_1.1.8.factories"]);
+	angular.module("wcm-forms-sna_1.1.8.controllers", ["wcm-forms-sna_1.1.8.services"]);
+	angular.module("wcm-forms-sna_1.1.8.directives", ["wcm-forms-sna_1.1.8.controllers"]);
 
-	angular.module("wcm-forms-sna_1.1.7", [
+	angular.module("wcm-forms-sna_1.1.8", [
 
 		"pelorus.services",
 
-		"wcm-forms-sna_1.1.7.factories",
-		"wcm-forms-sna_1.1.7.services",
-		"wcm-forms-sna_1.1.7.controllers",
-		"wcm-forms-sna_1.1.7.directives"
+		"wcm-forms-sna_1.1.8.factories",
+		"wcm-forms-sna_1.1.8.services",
+		"wcm-forms-sna_1.1.8.controllers",
+		"wcm-forms-sna_1.1.8.directives"
 
 	])
 	.run([function () {
