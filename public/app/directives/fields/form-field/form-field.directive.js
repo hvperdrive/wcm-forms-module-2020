@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("wcm-forms-sna_1.1.6.directives")
+angular.module("wcm-forms-sna_1.1.7.directives")
 	.directive("formField", [
 
 		"formsSNAConfig",
@@ -36,6 +36,10 @@ angular.module("wcm-forms-sna_1.1.6.directives")
 
                     $scope.version = {
                         settings: {},
+                    }
+
+					$scope.model = {
+                        form: null,
                     }
 
                     $scope.form.settings = {
