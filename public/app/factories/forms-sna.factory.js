@@ -1,7 +1,7 @@
 "use strict";
 
 (function(angular) {
-	angular.module("wcm-forms-sna_1.1.8.factories")
+	angular.module("wcm-forms-sna_1.2.0.factories")
 		.factory("formsSNAFactory", [
 
 			"$resource",
