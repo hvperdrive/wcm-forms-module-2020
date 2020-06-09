@@ -6,7 +6,7 @@ angular.module("wcm-forms-sna_1.1.8.directives")
 		"formsSNAConfig",
 		"formsSNAFactory",
 
-		function(formsSNAConfig, formsSNAFactory) {
+		function (formsSNAConfig, formsSNAFactory) {
 			return {
 				restrict: "E",
 				templateUrl: formsSNAConfig.modulePath + "directives/fields/form-field/form-field.html",
@@ -15,8 +15,8 @@ angular.module("wcm-forms-sna_1.1.8.directives")
 					label: "@",
 					secondaryLabel: "@?",
 					name: "@",
-                    model: "=",
-                    readonly: "=?",
+					model: "=",
+					readonly: "=?",
 
 					// Validation
 					fieldData: "=",
@@ -29,51 +29,26 @@ angular.module("wcm-forms-sna_1.1.8.directives")
 					placeholder: "=?",
 					disabled: "=?",
 				},
-				link: function($scope, element, attr) {
-                    $scope.form = {
-                        settings: {},
-                    }
-
-                    $scope.version = {
-                        settings: {},
-                    }
+				link: function ($scope, element, attr) {
+					$scope.form = {
+						settings: {},
+					}
 
 					$scope.model = {
-                        form: null,
-                    }
+						form: null,
+					}
 
-                    $scope.form.settings = {
+					$scope.form.settings = {
 						qlabel: "identifier",
 						track: "identifier",
 						options: [],
 						placeholder: "Select a form",
-                    };
-
-                    $scope.version.settings = {
-                        qlabel: "version",
-						track: "id",
-						options: [],
-						placeholder: "Select a version",
-                    }
-
-                    $scope.$watch('model.form', function(nv, prev) {
-                        formsSNAFactory.history.query({id: nv}).$promise
-							.then(function(versions) {
-                                $scope.version.settings.options = versions
-							});
-                    })
-
-                    $scope.$watch('model.version', function(nv, prev) {
-                        formsSNAFactory.template.get({id: nv.id}).$promise
-							.then(function(template) {
-                                $scope.model.template = template;
-							});
-                    })
+					};
 
 					var init = function init() {
 						formsSNAFactory.all.query().$promise
-							.then(function(forms) {
-                                $scope.form.settings.options = forms;
+							.then(function (forms) {
+								$scope.form.settings.options = forms;
 							});
 					};
 
