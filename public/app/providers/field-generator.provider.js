@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("wcm-forms-sna_1.2.0")
+angular.module("wcm-forms-sna_1.2.1")
 	.provider("fieldGenerator", [
 
 		"$provide",
@@ -10,7 +10,7 @@ angular.module("wcm-forms-sna_1.2.0")
 			var customFields = [
 				{
 					key: "form-select",
-					url: "niv_modules/wcm-forms-sna_1.2.0/public/app/directives/fields/form-field/form-field.template.html",
+					url: "niv_modules/wcm-forms-sna_1.2.1/public/app/directives/fields/form-field/form-field.template.html",
 				},
 			];
 
