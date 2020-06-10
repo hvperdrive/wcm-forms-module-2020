@@ -34,10 +34,6 @@ angular.module("wcm-forms-sna_1.2.0.directives")
 						settings: {},
 					}
 
-					$scope.model = {
-						form: null,
-					}
-
 					$scope.form.settings = {
 						qlabel: "identifier",
 						track: "identifier",
