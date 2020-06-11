@@ -1,7 +1,7 @@
 "use strict";
 
 (function(angular) {
-	angular.module("wcm-forms-sna_1.2.1")
+	angular.module("wcm-forms-sna_1.2.2")
 		.provider("formsSNAConfig", [
 
 			"MODULE_ENV_CONFIG",
@@ -10,7 +10,7 @@
 
 				this.API = {
 					name: MODULE_ENV_CONFIG.angularModule,
-					version: "1.2.1",
+					version: "1.2.2",
 					feDirPath: MODULE_ENV_CONFIG.feDirPath,
 					assetsDirPath: MODULE_ENV_CONFIG.assetsDirPath,
 					cssDirPath: MODULE_ENV_CONFIG.cssDirPath
