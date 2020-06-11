@@ -17,7 +17,7 @@ var fieldTypes = {
 		type: 'form-select',
 		dataType: 'object',
 		isQueryable: false,
-		isTranslate: false,
+		isTranslate: true,
 		isMultiple: true,
 		source: 'external',
 		operators: []
