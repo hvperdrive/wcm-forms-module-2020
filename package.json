@@ -1,5 +1,5 @@
 {
-    "name": "@wcm/forms-sna",
+    "name": "@wcm/forms-engine-module",
     "version": "1.2.2",
     "description": "Boilerplate module",
     "main": "app",
